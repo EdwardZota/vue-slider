@@ -41,7 +41,18 @@ createApp({
             if(this.activeGame < 0 ){
                 this.activeGame = this.slides.length - 1;
             }
+        },
+        selectGame(newGameImage){
+            this.activeGame = newGameImage;
+        },
+        autoPlay(){
+            setInterval(this.gotoNext,3000);
         }
+    },
+    mounted(){
+        this.autoPlay();
     }
+
+
   }).mount('#app')
 
