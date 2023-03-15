@@ -16,7 +16,7 @@
         <div class="container">
             <div class="slider-wrapper" tabindex="0">
 
-                <div class="item">
+                <div class="item" @mouseover="mouseover" @mouseleave="mouseleave">
                     <img :src="slides[activeGame].image" :alt="slides[activeGame].title" />
                     <div class="text">
                         <h3>{{slides[activeGame].title}}</h3>
