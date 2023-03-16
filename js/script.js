@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
       return {
+        play:null,
         activeGame:0,
         slides: [
             {
@@ -46,13 +47,11 @@ createApp({
             this.activeGame = newGameImage;
         },
         autoPlay(){
-            return play = setInterval(this.gotoNext,3000);
+            this.play = setInterval(this.gotoNext,3000);
         },
         mouseover(){
-            clearInterval(play);
-        },
-        mouseleave(){
-            this.autoPlay();
+            clearInterval(this.play);
+            this.play=null;
         }
     },
     mounted(){
